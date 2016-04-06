@@ -1,6 +1,6 @@
 {
   "name": "geomapapp",
-  "app_id": "7364750e",
+  "app_id": "f7d54f6",
   "gulpStartupTasks": [
     "sass",
     "watch"
