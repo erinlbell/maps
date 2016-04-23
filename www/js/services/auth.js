@@ -56,7 +56,7 @@ angular.module('App')
       registered_in: Date()
       };
 	  Utils.alertshow("Account successfully created");
-	  $state.go('createprofile');
+	  $state.go('home.dashboard');
 
       var profileRef = $firebaseArray(ref.child('profile'));
       return profileRef.$add(profile).then(function(ref) {

@@ -19,11 +19,6 @@ $stateProvider
       templateUrl: 'views/register/register.html',
       controller:'registerController'
     })
-	 .state('createprofile', {
-      url: '/createprofile',
-      templateUrl: 'views/createprofile/createprofile.html',
-      controller:'createprofileController'
-    })
 	
 	
     .state('home', {
