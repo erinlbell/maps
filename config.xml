@@ -13,6 +13,7 @@
   <allow-navigation href="*" />
   <allow-intent href="https://maps.googleapis.com"/>
   <plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="3" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

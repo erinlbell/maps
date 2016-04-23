@@ -1,57 +1,81 @@
-angular.module('underscore', [])
-.factory('_', function() {
-  return window._; // assumes underscore has already been loaded on the page
-});
+'Use Strict';
+angular.module('App', ['ionic','ngStorage', 'ngMap','ngCordova','firebase','ngMessages'])
+.config(function($stateProvider, $urlRouterProvider) {
+$stateProvider
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('geomapapp', [
-  'ionic',
-  'geomapapp.controllers',
-  'geomapapp.services',
-  'geomapapp.filters',
-  'geomapapp.directives',
-  'ngMap'
-])
 
+    .state('login', {
+      url: '/login',
+      templateUrl: 'views/login/login.html',
+      controller:'loginController'
+    })
+    .state('forgot', {
+      url: '/forgot',
+      templateUrl: 'views/forgot/forgot.html',
+      controller:'forgotController'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'views/register/register.html',
+      controller:'registerController'
+    })
+	 .state('createprofile', {
+      url: '/createprofile',
+      templateUrl: 'views/createprofile/createprofile.html',
+      controller:'createprofileController'
+    })
+	
+	
+    .state('home', {
+      url: '/home',
+	  abstract:true,
+      templateUrl: 'views/home/home.html',
+      controller:'homeController'
+    })
+	
+	.state('home.dashboard', {
+      url: '/dashboard',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/dashboard/dashboard.html',
+      controller:'dashboardController'
+	    }
+    }
+    })
+	.state('home.settings', {
+      url: '/settings',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/settings/settings.html',
+      controller:'settingsController'
+	    }
+    }
+    })
+	.state('home.maps', {
+      url: '/maps',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/maps/maps.html',
+      controller:'mapsController'
+	    }
+    }
+    });
+	
+	
+	
+$urlRouterProvider.otherwise("/login");
+})
+// Changue this for your Firebase App URL.
+.constant('FURL', 'https://geomapapp.firebaseio.com/')
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins.Keyboard) {
+    if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
+    if(window.StatusBar) {
       StatusBar.styleDefault();
     }
   });
-})
-
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-
-  .state('app', {
-    url: "/app",
-    abstract: true,
-    templateUrl: "templates/menu.html",
-    controller: 'AppCtrl'
-  })
-
- 
-
-  .state('app.venue', {
-    url: "/venue",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/venue.html",
-        controller: 'VenueCtrl'
-      }
-    }
-  });
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/venue');
 });

@@ -1,1 +1,0 @@
-angular.module('geomapapp.services', [])

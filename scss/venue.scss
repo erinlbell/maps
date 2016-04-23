@@ -2,7 +2,8 @@
 {
   .map
   {
-    height:400px;
+    @include cssCalc("height", "(((100vh - #{($bar-height)}) * #{($venue-map-porcentage)}) /100)");
+  }
 
   .venue-location
   {
