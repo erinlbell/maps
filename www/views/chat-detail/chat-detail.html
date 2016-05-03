@@ -1,0 +1,51 @@
+<ion-view name="chats" view-title="{{chat.name}}">
+  <ion-content class="padding">
+
+  <div class="list card" >
+        <div class="item item-divider">Re:  {{chat.name}} </br></br>
+	
+	<img ng-src="{{chat.face}}" style="width: 64px; height: 64px">
+    </br>
+	<p>
+	<span>{{chat.date}}</span>
+	<span>{{chat.time}}</span>
+      {{chat.lastText}}
+    </p>
+	</div>
+	</div>
+	       
+
+<div class="list card" >
+		   <div class="item item-divider">Reply </br></br>
+
+	 <div ng-repeat="message in messages  "
+           class="messages">
+		
+
+        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+		<div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">
+		<div class="date" ng-class="{'slide-right': hideTime, '': !hideTime}">
+    </br>
+	<table>
+	<tbody>
+	<th>
+	
+	<p>
+	<span>{{message.date}}</span></br>
+	<span>{{message.time}}</span></br>
+     Message: <span>{{message.text}}</span>
+    </p>
+	
+	</th>
+	<tbody>
+	</table>
+	</div></div></div></div>
+	
+	<div class="inputbox">
+				</br>
+                <input type="text" placeholder="Enter Reply " on-return="sendMessage(); closeKeyboard()" ng-model="data.text" on-focus="inputUp()" on-blur="inputDown()" /><a class="icon-right ion-plus-circled positive" id="addicon" ng-click="sendMessage()" ></a></br>
+
+
+		   </div></div></div>
+  </ion-content>
+</ion-view>

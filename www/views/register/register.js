@@ -1,6 +1,7 @@
 'Use Strict';
-angular.module('App').controller('registerController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
-
+angular.module('App').controller('registerController', function ($scope, $ionicNavBarDelegate,$state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
+console.log('registerController');
+  $ionicNavBarDelegate.setTitle('<img class="title-image" src="http://i66.tinypic.com/2a7vjnr.png">');
   $scope.register = function(user) {
     if(angular.isDefined(user)){
     Utils.show();

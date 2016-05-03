@@ -52,6 +52,7 @@ angular.module('App')
     createProfile: function(uid, user) {
       var profile = {
 				id: uid,
+		username: user.username,
         email: user.email,
       registered_in: Date()
       };
@@ -74,7 +75,7 @@ angular.module('App')
 
 
     register: function(user) {
-      return auth.$createUser({email: user.email, password: user.password})
+      return auth.$createUser({username: user.username, email: user.email, password: user.password})
         .then(function() {
           // authenticate so we have permission to write to Firebase
           return Auth.login(user);
@@ -137,3 +138,7 @@ angular.module('App')
 	return Auth;
 
 });
+
+
+
+

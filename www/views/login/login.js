@@ -1,6 +1,9 @@
 'Use Strict';
-angular.module('App').controller('loginController', function ($scope, $state,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
-  var ref = new Firebase(FURL);
+angular.module('App').controller('loginController', function ($scope, $state,$ionicNavBarDelegate,$cordovaOauth, $localStorage, $location,$http,$ionicPopup, $firebaseObject, Auth, FURL, Utils) {
+ console.log('loginController');
+  $ionicNavBarDelegate.setTitle('<img class="title-image" src="http://i66.tinypic.com/2a7vjnr.png">');
+
+ var ref = new Firebase(FURL);
   var userkey = "";
   $scope.signIn = function (user) {
     console.log("Enviado");

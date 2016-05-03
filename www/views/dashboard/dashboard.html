@@ -1,34 +1,56 @@
-<ion-view class="dash-view">
-  <ion-nav-title>
-    <span>Dashboard</span>
-  </ion-nav-title>
- <ion-content>
+<ion-view  class="dash-view">
 
-  </br></br>
+<ion-content class="has-header" ng-controller="dashboardController">
+	
+	
+	   <label class="title-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  Dashboard</label>
+</br></br>
+</br></br></br>		
+<div class="inputbox2">
     <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
+
+      <div class="item item-divider">Recommended</div>
       <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
-        </div>
+        
+         
+		
+		 
+		 
+		</br></br></br>	</br>	</br>	
       </div>
     </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
-</ion-content>	
+</div>
+
+
+
+     <button nav-clear class="button button-large button-outline button-positive" ui-sref="home.appointments">
+              Create Appointment
+            </button>
+			
+
+	<ion-tabs class="tabs-icon-only tabs-top top-277">
+	
+	
+	 <ion-tab title="" icon-off="ion-ios-home" icon-on="ion-ios-home" ui-sref="home.dashboard">
+                 <ion-nav-view name="dashboard"></ion-nav-view>
+
+        </ion-tab>
+
+   <ion-tab title="" icon-off="ion-android-chat" icon-on="ion-android-chat" ui-sref="home.chats">
+                 <ion-nav-view name="chats"></ion-nav-view>
+
+        </ion-tab>
+
+
+      <ion-tab title="" icon-off="ion-ios-gear" icon-on="ion-ios-gear" href="#/home/settings">
+        <ion-nav-view name="settings"></ion-nav-view>
+      </ion-tab>
+
+</ion-tabs>
+
+  </ion-content>
 	
 </ion-view>

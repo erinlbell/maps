@@ -1,0 +1,86 @@
+ <ion-view  class="appointments-view">
+         <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+        <ion-content class="content-stable"
+                 on-swipe-left="hideTime = false"
+                 on-swipe-right="hideTime = true"  ng-controller="appointmentsController">
+     
+	   <label class="title-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  
+	  
+	  Appointments</label>
+	  </br> </br> </br>
+	
+ 
+
+<div class="inputbox">
+   <div class="item item-input-inset">
+      <label class="item item-input-wrapper">		
+	<input type="text" placeholder="Enter phone number"  ng-model="messages.phoneno"  />
+      </label>
+    <a class="button icon-left ion-ios7-telephone button-calm button-outline" 
+	ng-href="tel: {{messages.phoneno}}">Call </a>
+   </div></div>
+
+</br>
+	
+	
+	 <label class="weekly">Weekly Dates:  </label>   
+	 <div class="apptdates">
+      <input id="start"  type="date" ng-model="appoinment.startdate"/><input id="end" type="date" ng-model="appointment.enddate" />
+	</div></br>
+	
+	
+	<div class="inputbox">
+    <div class="list card" >
+      <div class="item item-divider">Appointment List 
+	  </br></br>
+	  
+
+	     <div class="item item-body">
+		 <div ng-repeat="message in messages  "
+           ng-class="{other: message.userId != myId}" 
+           class="messages">
+		
+
+        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+		<div class="time" ng-class="{'slide-right': hideTime, '': !hideTime}">
+		<div class="date" ng-class="{'slide-right': hideTime, '': !hideTime}">
+		
+     <span id="output">Appointment #{{$index+1}}</span></br>
+	   <span>{{message.date }}</span></br>
+	   <span>{{message.time}}</span></br>
+	  <span>{{message.name}}</span></br>
+	   <span>{{message.apptname}}</span></br>
+	  <span>{{message.apptdate}}</span></br>
+	  <span>{{message.appttime}}</span></br>
+	   <span>{{message.apptlocation}}</br>
+	    <i class="icon ion-ios-location positive " id="locationicon" ui-sref="home.maps">Maps</i>
+	   </span></br>
+	 <span>Status<i class="icon ion-checkmark-circled positive" id="statusicon" ui-sref="home.results"></i></br>
+		</span></br>
+	  
+	    </div> </div></div> </div>
+		</br></br></br></br></br></br></div>
+		
+		
+	  
+	  </div></div></div>
+	  
+
+	  <div class="inputbox">
+	      <div class="item item-divider">Create New Appointment
+<a class="icon-right ion-plus-circled positive" id="addicon" ng-click="sendMessage()" ></a></br>
+				</br>
+                <input type="text" placeholder="Employee Name " on-return="sendMessage(); closeKeyboard()" ng-model="data.name" on-focus="inputUp()" on-blur="inputDown()" /></br>
+				<input type="text" placeholder="Appointment Name " on-return="sendMessage(); closeKeyboard()"  ng-model="data.apptname" on-focus="inputUp()" on-blur="inputDown()" /></br>
+                <input type="text" placeholder="Appointment Date " on-return="sendMessage(); closeKeyboard()"  ng-model="data.apptdate"  on-focus="inputUp()" on-blur="inputDown()"/></br>
+                <input type="text" placeholder="Appointment Time" on-return="sendMessage(); closeKeyboard()"  ng-model="data.appttime" on-focus="inputUp()" on-blur="inputDown()" /></br>
+				<input type="text" placeholder="Location" on-return="sendMessage(); closeKeyboard()"  ng-model="data.apptlocation" on-focus="inputUp()" on-blur="inputDown()" />	</br>	
+       
+		   </div>
+		   </div>
+
+  </ion-content>
+      </ion-view>

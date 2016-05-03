@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.geomapappf7d54f6" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-  <name>geomapapp</name>
+  <name>skyScraper</name>
   <description>
-        An Ionic Framework and Cordova project.
+        An Ionic Framework and Cordova and Firebase project.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="erinbelldeveloper@gmail.com" href="http://ionicframework.com/">
+      Erin L Bell
     </author>
   <content src="index.html"/>
   <access origin="*"/>
   <access origin="http://maps.google.com" />
   <allow-navigation href="*" />
+  <access origin="tel:*" launch-external="yes" />
   <allow-intent href="https://maps.googleapis.com"/>
   <plugin name="org.apache.cordova.geolocation" spec="0.3.10" source="pgb" />
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="3" />

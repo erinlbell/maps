@@ -1,9 +1,8 @@
 <ion-view class="maps-view">
-  <ion-nav-title>
-    <span>Maps</span>
-  </ion-nav-title>
+  
   
   <ion-content>
+   
   
     <map class="map" data-tap-disabled="true" center="{{position.lat}},{{position.lng}}" zoom="15" disable-default-u-i="true">
       <marker position="{{position.lat}},{{position.lng}}" visible="true"></marker>
@@ -12,29 +11,30 @@
       <div class="row">
         <form id="form" ng-controller="mapsController">
 
-      <div class="field" id="dest">
+     <div class="list card" >
+		   <div class="item item-divider">Get Directions</br></br>
+
+	 <div class="field" id="dest">
         <label>Destination</label>
         <select name="dest"
                 ng-model="formData.dest">
 
-          <option class="name" value="Westminster, London, UK">Westminster, London, UK</option>
-          <option class="coord" value="51.498739, -0.133827">51.498739, -0.133827 (Westminster)</option>
+        
+          <option value="" selected>None (current location)</option>
 
           <option value="custom">[Custom destination]</option>
         </select>
         <div class="custom" ng-show="formData.dest == 'custom'">
           <input type="text" ng-model="formData.custom_dest" placeholder="Enter destination"/>
         </div>
-      </div>
+      </div></br>
 
       <div class="field" id="start">
         <label>Start</label>
         <select name="start" ng-model="formData.start">
           <option value="">None (current location)</option>
 
-          <option class="name" value="Manchester, UK">Manchester, UK</option>
-          <option class="coord" value="53.493002,-2.240080">53.493002, -2.240080 (Manchester)</option>
-
+         
           <option value="custom">[Custom start]</option>
         </select>
 
@@ -42,10 +42,12 @@
           <input type="text" ng-model="formData.custom_start" placeholder="Enter start"/>
         </div>
       </div>
-
+</br>
       <div>
         <button class="button button-positive navigate" on-tap="navigate()">Navigate</button>
       </div>
+	  </div>
+	  </div>
     </form>
       </div>
     </div>

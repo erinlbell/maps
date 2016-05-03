@@ -1,0 +1,26 @@
+<ion-view class="results-view">
+  <ion-content>
+ 
+   <label class="title-label">
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  Results</label></br></br>
+   
+	<div class="list">
+            <ion-toggle ng-repeat="results in results"
+                        ng-model="results.received"
+                        ng-change="ordersChange(results)">
+              {{ results.name }}
+            </ion-toggle>
+			
+			
+            <div class="item item-divider">
+             Results(orders-left)
+            </div>
+            <div class="item" ng-repeat="msg in activity">
+              {{ msg }}
+            </div>
+          </div>
+ 
+		  
+  </ion-content>
+</ion-view>

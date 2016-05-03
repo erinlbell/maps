@@ -1,11 +1,25 @@
-<ion-view view-title="Register" hide-back-button="false">
+<ion-view class="register-view" hide-back-button="false">
   <ion-content class="padding-top">
+
+   <label class="title-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  
+	  Register</label>
     <div class="text-center padding-top">
       <i class="icon ion-android-person-add larger positive"></i>
     </div>
     <form name="registerForm" novalidate ng-submit="registerForm.$valid && register(user)"
     ng-class="{ 'has-error' : registerForm.txtemail.$invalid && registerForm.$submitted }">
     <div class="list">
+	
+	
+	<label class="item item-input item-floating-label">
+          <span class="input-label">Username</span>
+        <input name="txtusername" type="text" ng-model="user.username" placeholder="Username"
+        ng-minlength="1"
+        ng-maxlength="30"
+        required>
+      </label>
+     
         <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
         <input name="txtemail" type="email" ng-model="user.email" placeholder="Email"

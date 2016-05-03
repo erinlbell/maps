@@ -1,1 +1,83 @@
 /* Empty. Add your own CSS if you like */
+#addicon{
+	font-size: 25px !important;
+	overflow:hidden;
+	
+}
+
+.apptdates input{
+  
+  float:left;
+  background-color: transparent;
+}
+.dash-view,.call-view, .maps-view,.appointments-view,.article-detail-view, .call-view,.article-view,.phone-results-view, .results-view{
+	@media (max-width: 480px) { ... }
+
+/* Smartphones to Tablets */
+@media (min-width: 481px) and (max-width: 767px) { ... }
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 959px) { ... }
+
+/* Desktop */
+@media (min-width: 960px) and (max-width: 1199px) { ... }
+
+/* Large Display */
+@media (min-width: 1200px) { ... }
+}
+.title-label{
+	color: #3295c3;
+	font-size: 21px;
+	font-family: cursive;
+	text-align: center;
+}
+
+.splashbuttons{
+	text-align:center;
+	
+}
+
+.splash{
+    background-image: url("http://i68.tinypic.com/2zhpff5.png");
+    background-repeat: no-repeat center center fixed;
+   
+	
+}
+
+.title-image{
+	text-align: center;
+	
+}
+.title-label{
+	float: center;
+	
+}
+
+.inputbox{
+width:300px;
+}
+.inputbox2{
+width:500px;
+}
+.icon.ion-ios-home, .icon.ion-android-chat, .icon.ion-ios-gear{
+
+  border-radius: 50%;
+  width:80px;
+  height:48px;
+  overflow:hidden;
+  background: yellow !important;
+      font-weight: bold;
+
+}
+
+.tab-nav.tabs{
+float:left !important;
+background-color: transparent;
+border:none;
+padding-right: 900px;
+
+
+}
+
+
+

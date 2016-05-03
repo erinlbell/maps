@@ -1,10 +1,13 @@
 
 angular.module('App')
-.controller('mapsController', function($scope,$cordovaLaunchNavigator) {
-  //map with venue position
+.controller('mapsController', function($scope,$ionicNavBarDelegate,$cordovaLaunchNavigator) {
+ console.log('mapsController');
+  $ionicNavBarDelegate.setTitle('<img class="title-image" src="http://i66.tinypic.com/2a7vjnr.png">');
+
+ //map with venue position
   $scope.position = {
-    lat: 	34.052235,
-    lng: -118.243683
+    lat: 	33.7701,
+    lng: -118.1937
   };
 
   
@@ -15,7 +18,7 @@ angular.module('App')
    
    
     $scope.formData = {
-      dest: "Westminster, London, UK"
+      dest: "Japan"
     };
 
     $scope.$watch('formData', function (formData) {

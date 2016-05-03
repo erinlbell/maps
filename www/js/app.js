@@ -3,7 +3,11 @@ angular.module('App', ['ionic','ngStorage', 'ngMap','ngCordova','firebase','ngMe
 .config(function($stateProvider, $urlRouterProvider) {
 $stateProvider
 
-
+.state('splash', {
+      url: '/splash',
+      templateUrl: 'views/splash/splash.html',
+      controller:'splashController'
+    })
     .state('login', {
       url: '/login',
       templateUrl: 'views/login/login.html',
@@ -46,6 +50,43 @@ $stateProvider
 	    }
     }
     })
+	.state('home.chats', {
+      url: '/chats',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/chats/chats.html',
+      controller:'chatsController'
+	    }
+    }
+    })
+	.state('home.chat-detail', {
+      url: '/chats/:chatId',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/chat-detail/chat-detail.html',
+          controller: 'chat-detailController'
+        }
+      }
+    })
+	.state('home.appointments', {
+      url: '/appointments',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/appointments/appointments.html',
+      controller:'appointmentsController'
+	    }
+    }
+    })
+	.state('home.results', {
+      url: '/results',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/results/results.html',
+      controller:'resultsController'
+	    }
+    }
+    })
+	
 	.state('home.maps', {
       url: '/maps',
 	  views: {
@@ -58,10 +99,17 @@ $stateProvider
 	
 	
 	
-$urlRouterProvider.otherwise("/login");
+$urlRouterProvider.otherwise("/splash");
 })
 // Changue this for your Firebase App URL.
 .constant('FURL', 'https://geomapapp.firebaseio.com/')
+
+ $rootScope.global = {
+        theme: {
+          
+          splash: $localstorage.get('last_logo') || 'img/sky.png'
+        }
+      }
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
