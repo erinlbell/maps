@@ -1,6 +1,6 @@
 
 
-# KleenCare
+#Map Template
 Email: erinbelldeveloper@gmail.com
 Ionic Framework setup</br> 
 
