@@ -6,7 +6,8 @@ Ionic Framework setup</br>
 
 Note: Be sure to have the given environments already installed on computer else download from the links:
 
-1.) Java jdk  && Android sdk-Android Studio http://developer.android.com/sdk/index.html  API 23
+1.) Java jdk  && Android sdk-Android Studio http://developer.android.com/sdk/index.html  API 23 
+&& git from https://git-scm.com/download/win
 
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html and path to it in system variable ex.) C:\Program-Files\java\jdk_21</br> (type in system variables in search->edit system variables->advanced(tab)->environment variables->2nd box=System variables->(scroll to variable(left)=Path) ->highlight path and click edit->In second box=Variable Value scroll all the way right to the end add a semi-colon and paste location of jdk ex. C:\Program Files\Java\jdk1.8.0_91; Press okay three times.
 
