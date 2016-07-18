@@ -14,7 +14,7 @@ angular.module('App').controller('loginController', function ($scope, $state,$io
          Utils.hide();
          console.log("Antes de loguear:" + JSON.stringify(user));
          Utils.alertshow("Login Successful");
-         $location.path('/home/appointments');
+         $location.path('/home/dashboard');
       }, function(err) {
          Utils.hide();
 		 Utils.alertshow("Login unsuccesful. please use correct credentials");

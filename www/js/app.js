@@ -41,6 +41,15 @@ $stateProvider
 	    }
     }
     })
+	.state('home.video', {
+      url: '/video',
+	  views: {
+      'menuContent': {
+      templateUrl: 'views/video/video.html',
+      controller:'videoController'
+	    }
+    }
+    })
 	.state('home.settings', {
       url: '/settings',
 	  views: {

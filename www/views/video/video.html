@@ -1,32 +1,33 @@
-<ion-view title="Dashboard" class="dash-view">
+ <ion-view name="video" class="video-view" title="Video">
+         <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+        <ion-content class="content-stable"
+                 on-swipe-left="hideTime = false"
+                 on-swipe-right="hideTime = true"  ng-controller="videoController">
+				 
+				  <div class="list">
+	  <div class="item item-divider">
+		  <i class="ion-videocamera"></i>
+		 Video Clips
+	  </div>
+	  </br></br>&nbsp;&nbsp;&nbsp;
+		<img ng-src="{{urlForClipThumb(clip)}}" ng-click="showClip(clip)" style="height: 250px; width: 150px;" />
+  </div>
+  
+  
+  	  <div class="button-bar">
+		  <button class="button button-positive" ng-click="captureVideo()">
+			  Capture a video
+		  </button>
+	  </div>
 
-<ion-content class="has-header" ng-controller="dashboardController">
-	
-	
-</br></br>
-</br></br></br>		
-<div class="inputbox2">
-    <div class="list card">
+ 
+  </ion-content>
+ 
 
-      <div class="item item-divider" style="width:100%">Welcome</div>
-      <div class="item item-body">
-
-		 
-		 
-		</br></br></br>	</br>	</br>	
-      </div>
-    </div>
-</div>
-
-
-
-     <button nav-clear class="button button-large button-outline button-positive" ui-sref="home.video">
-              Record
-            </button>
-			</br></br></br></br></br></br></br></br>
-
-
-<div style="">
+				 
+				 <div style="">
 	<ion-tabs class="tabs-bottom bottom-277">
 	
 	
@@ -60,6 +61,6 @@
 
 </ion-tabs>
 </div>
+    
   </ion-content>
-	
-</ion-view>
+      </ion-view>

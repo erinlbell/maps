@@ -59,25 +59,6 @@ width:300px;
 .inputbox2{
 width:500px;
 }
-.icon.ion-ios-home, .icon.ion-android-chat, .icon.ion-ios-gear{
-
-  border-radius: 50%;
-  width:80px;
-  height:48px;
-  overflow:hidden;
-  background: yellow !important;
-      font-weight: bold;
-
-}
-
-.tab-nav.tabs{
-float:left !important;
-background-color: transparent;
-border:none;
-padding-right: 900px;
-
-
-}
 
 
 
